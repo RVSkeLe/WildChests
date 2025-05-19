@@ -3,6 +3,7 @@ package com.bgsoftware.wildchests.utils;
 import com.bgsoftware.wildchests.Locale;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -15,6 +16,10 @@ public final class StringUtils {
     public static String format(BigDecimal bigDecimal) {
         String s = numberFormatter.format(Double.parseDouble(bigDecimal.toString()));
         return s.endsWith(".00") ? s.replace(".00", "") : s;
+    }
+
+    public static String format(BigInteger value) {
+        return format(new BigDecimal(value));
     }
 
     public static String fancyFormat(BigDecimal bigDecimal) {

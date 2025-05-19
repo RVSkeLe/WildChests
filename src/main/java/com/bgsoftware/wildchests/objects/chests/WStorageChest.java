@@ -10,6 +10,7 @@ import com.bgsoftware.wildchests.objects.inventory.CraftWildInventory;
 import com.bgsoftware.wildchests.objects.inventory.WildContainerItem;
 import com.bgsoftware.wildchests.scheduler.Scheduler;
 import com.bgsoftware.wildchests.utils.ItemUtils;
+import com.bgsoftware.wildchests.utils.StringUtils;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -44,7 +45,7 @@ public final class WStorageChest extends WChest implements StorageChest {
         super(placer, location, chestData);
         maxAmount = chestData.getStorageUnitMaxAmount();
         inventory = plugin.getNMSInventory().createInventory(this, INVENTORY_SIZE,
-                chestData.getTitle(1).replace("{0}", amount + ""), 0);
+                chestData.getTitle(1).replace("{0}", StringUtils.format(amount)), 0);
 
         for (int i = 0; i < INVENTORY_SIZE; ++i)
             contents.add(WildContainerItem.AIR);
