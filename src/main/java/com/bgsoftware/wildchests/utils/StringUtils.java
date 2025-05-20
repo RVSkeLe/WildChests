@@ -22,6 +22,10 @@ public final class StringUtils {
         return format(new BigDecimal(value));
     }
 
+    public static String fancyFormat(BigInteger value) {
+        return fancyFormat(new BigDecimal(value));
+    }
+
     public static String fancyFormat(BigDecimal bigDecimal) {
         if (bigDecimal.compareTo(Q) >= 0)
             return format(bigDecimal.divide(Q, 2, RoundingMode.HALF_UP)) + Locale.FORMAT_QUAD.getMessage();

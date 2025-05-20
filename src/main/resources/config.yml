@@ -152,7 +152,7 @@ chests:
   storage_unit:
     chest-mode: STORAGE_UNIT
     size: 3
-    title: Storage Unit {0}
+    title: Storage Unit {0} | {1}
     item:
       name: '&bStorage Unit &7(Place to active)'
     particles:
